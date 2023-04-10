@@ -11,10 +11,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
+      - SERVERURL=wireguard.domain.com # optional
       - SERVERPORT=51820 #optional
       - PEERS=20 #optional
       - PEERDNS=auto #optional
       - INTERNAL_SUBNET=10.10.10.0 #optional
+      - ALLOWEDIPS=0.0.0.0/0 #optional
+
     volumes:
       - /root/wireguard:/config
       - /lib/modules:/lib/modules
@@ -40,8 +43,9 @@ services:
     ports:
       - 53:53/udp
       - 53:53/tcp
-      - 8080:80/tcp
-      - 1443:443/tcp
+      - 80:80/tcp
+      - 443:443/tcp
+      #- 67:67/udp # optional
     expose:
       - "53"
       - "67"
