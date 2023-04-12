@@ -1,6 +1,20 @@
 version: '3.3'
 
 services:
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:latest
+    container_name: duckdns
+    environment:
+      - PUID=1000 #optional
+      - PGID=1000 #optional
+      - TZ=Europe/Madrid #optional
+      - SUBDOMAINS=walii.duckdns.org
+      - TOKEN=token
+      - LOG_FILE=false #optional
+    #volumes:
+    # - /path/to/appdata/config:/config #optional
+    restart: unless-stopped
+    
   wireguard:
     image: linuxserver/wireguard
     container_name: wireguard
