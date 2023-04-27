@@ -8,8 +8,8 @@ services:
       - PUID=1000 #optional
       - PGID=1000 #optional
       - TZ=Europe/Madrid #optional
-      - SUBDOMAINS=domain.duckdns.org
-      - TOKEN=token
+      - SUBDOMAINS=${DUCKDNS_DOMAIN}
+      - TOKEN=${DUCKDNS_TOKEN}
       - LOG_FILE=false #optional
     #volumes:
     # - /path/to/appdata/config:/config #optional
