@@ -1,3 +1,10 @@
+# Docker install 
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt install docker docker-compose
+
+
 # docker_pihole_wireguard
 
 Un reposito que incluye un docker-compose.yaml que puede ayudarte a crear una VPN en tu red privada con WIREGUARD, incluyendo un filtro de URLs muy efectivo con PIHOLE, todo corriendo con docker lo cual nos permite ejecutarlo en cualquier sistema operativo, windows, linux, apple, inclusive Raspberry PI, y como en mi caso en un simple OrangePiZero.
